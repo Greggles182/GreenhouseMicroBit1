@@ -1,7 +1,5 @@
-let temp = 0
 let light2 = 0
-basic.showString("Starting up...")
-basic.showIcon(IconNames.Happy)
+let temp = 0
 basic.forever(function () {
     light2 = input.lightLevel()
     temp = input.temperature()
@@ -9,4 +7,5 @@ basic.forever(function () {
     basic.showNumber(light2)
     basic.showString("Temperature (°C): ")
     basic.showNumber(temp)
+    music.playMelody("C D E F G A B C5 ", 120)
 })
