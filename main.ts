@@ -23,13 +23,15 @@ basic.forever(function () {
     } else {
         radio.sendMessage(RadioMessage.LightOff)
     }
+    basic.pause(500)
     if (40 > temp) {
         radio.sendMessage(RadioMessage.HeaterOn)
     } else {
         radio.sendMessage(RadioMessage.HeaterOff)
     }
+    basic.pause(500)
     if (40 > pins.analogReadPin(AnalogPin.P0)) {
         radio.sendMessage(RadioMessage.WaterTrigger)
     }
-    basic.pause(1000)
+    basic.pause(500)
 })
