@@ -33,7 +33,7 @@ basic.forever(function () {
     }
     basic.showIcon(IconNames.SmallSquare)
     basic.pause(500)
-    if (40 > pins.analogReadPin(AnalogPin.P0)) {
+    if (1024 > pins.analogReadPin(AnalogPin.P0)) {
         radio.sendMessage(RadioMessage.WaterTrigger)
     }
     basic.showString("" + (pins.analogReadPin(AnalogPin.P0)))
