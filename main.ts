@@ -36,6 +36,7 @@ basic.forever(function () {
     if (40 > pins.analogReadPin(AnalogPin.P0)) {
         radio.sendMessage(RadioMessage.WaterTrigger)
     }
+    basic.showString("" + (pins.analogReadPin(AnalogPin.P0)))
     basic.pause(500)
     basic.showIcon(IconNames.SmallSquare)
 })
