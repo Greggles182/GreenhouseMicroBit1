@@ -16,7 +16,7 @@ basic.forever(function () {
     temp = input.temperature()
     basic.showString("Light Level: ")
     basic.showNumber(light2)
-    basic.showString("Temperature (°C): ")
+    basic.showString("Temperature: ")
     basic.showNumber(temp)
     basic.showIcon(IconNames.SmallSquare)
     if (68 > light2) {
