@@ -7,21 +7,6 @@ enum RadioMessage {
     WaterOn = 6289,
     WaterTrigger = 8454
 }
-input.onPinPressed(TouchPin.P0, function () {
-    radio.sendMessage(RadioMessage.HeaterOn)
-})
-input.onButtonPressed(Button.A, function () {
-    radio.sendMessage(RadioMessage.LightOff)
-})
-input.onPinPressed(TouchPin.P2, function () {
-    radio.sendMessage(RadioMessage.WaterTrigger)
-})
-input.onButtonPressed(Button.B, function () {
-    radio.sendMessage(RadioMessage.HeaterOff)
-})
-input.onPinPressed(TouchPin.P1, function () {
-    radio.sendMessage(RadioMessage.LightOn)
-})
 let temp = 0
 let light2 = 0
 let RadioGroup = 1
@@ -34,4 +19,17 @@ basic.forever(function () {
     basic.showString("Temperature (°C): ")
     basic.showNumber(temp)
     basic.pause(1000)
+    if (68 > light2) {
+        radio.sendMessage(RadioMessage.LightOn)
+    } else {
+        radio.sendMessage(RadioMessage.LightOff)
+    }
+    if (40 > temp) {
+        radio.sendMessage(RadioMessage.HeaterOn)
+    } else {
+        radio.sendMessage(RadioMessage.HeaterOff)
+    }
+    if (40 > pins.analogReadPin(AnalogPin.P0)) {
+        radio.sendMessage(RadioMessage.WaterTrigger)
+    }
 })
