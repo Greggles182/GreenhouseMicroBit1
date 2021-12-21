@@ -18,20 +18,24 @@ basic.forever(function () {
     basic.showNumber(light2)
     basic.showString("Temperature (°C): ")
     basic.showNumber(temp)
+    basic.showIcon(IconNames.SmallSquare)
     if (68 > light2) {
         radio.sendMessage(RadioMessage.LightOn)
     } else {
         radio.sendMessage(RadioMessage.LightOff)
     }
+    basic.showIcon(IconNames.SmallSquare)
     basic.pause(500)
-    if (40 > temp) {
+    if (15 > temp) {
         radio.sendMessage(RadioMessage.HeaterOn)
     } else {
         radio.sendMessage(RadioMessage.HeaterOff)
     }
+    basic.showIcon(IconNames.SmallSquare)
     basic.pause(500)
     if (40 > pins.analogReadPin(AnalogPin.P0)) {
         radio.sendMessage(RadioMessage.WaterTrigger)
     }
     basic.pause(500)
+    basic.showIcon(IconNames.SmallSquare)
 })
