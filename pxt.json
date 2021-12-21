@@ -1,5 +1,5 @@
 {
-    "name": "project1",
+    "name": "Sensor",
     "version": "0.1.0",
     "description": "",
     "dependencies": {
@@ -17,6 +17,10 @@
     "testFiles": [
         "test.ts"
     ],
+    "targetVersions": {
+        "target": "4.0.16",
+        "targetId": "microbit"
+    },
     "supportedTargets": [
         "microbit"
     ],

@@ -4,7 +4,8 @@ enum RadioMessage {
     LightOff = 64509,
     HeaterOn = 29523,
     HeaterOff = 54869,
-    WaterOn = 6289
+    WaterOn = 6289,
+    WaterTrigger = 8454
 }
 input.onPinPressed(TouchPin.P0, function () {
     radio.sendMessage(RadioMessage.HeaterOn)
@@ -13,7 +14,7 @@ input.onButtonPressed(Button.A, function () {
     radio.sendMessage(RadioMessage.LightOff)
 })
 input.onPinPressed(TouchPin.P2, function () {
-    radio.sendMessage(RadioMessage.WaterOn)
+    radio.sendMessage(RadioMessage.WaterTrigger)
 })
 input.onButtonPressed(Button.B, function () {
     radio.sendMessage(RadioMessage.HeaterOff)
